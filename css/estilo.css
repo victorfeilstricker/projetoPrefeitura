@@ -1,0 +1,56 @@
+body { background-color: #f4f6f9; overflow-x: hidden; }
+
+/* Configurações do Menu Lateral */
+.sidebar { 
+    width: 250px; 
+    background-color: #212529; 
+    color: #fff; 
+    position: fixed; 
+    top: 0; 
+    bottom: 0; 
+    overflow-y: auto; 
+    padding-bottom: 30px; 
+}
+.sidebar-header { padding: 20px; background-color: #1a1e21; text-align: center; border-bottom: 1px solid #4a4a4a; }
+.sidebar a { color: #c2c7d0; text-decoration: none; padding: 15px 20px; display: block; border-left: 4px solid transparent; transition: 0.2s; }
+.sidebar a:hover, .sidebar a.active { background-color: #343a40; color: #fff; border-left: 4px solid #0d6efd; }
+.sidebar i { margin-right: 10px; width: 20px; text-align: center; }
+
+/* Configurações da Barra de Rolagem do Menu */
+.sidebar::-webkit-scrollbar { width: 6px; }
+.sidebar::-webkit-scrollbar-track { background: transparent; }
+.sidebar::-webkit-scrollbar-thumb { background: #4a4a4a; border-radius: 10px; }
+.sidebar::-webkit-scrollbar-thumb:hover { background: #6c757d; }
+
+/* Configurações do Conteúdo Principal */
+.main-content { margin-left: 250px; padding: 20px; min-height: 100vh; }
+.topbar { background-color: #fff; padding: 15px 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); margin-bottom: 25px; display: flex; justify-content: space-between; align-items: center; }
+.card-custom { border: none; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+.card-header-custom { background-color: #fff; border-bottom: 1px solid #eee; padding: 20px; border-radius: 10px 10px 0 0; font-weight: 600; color: #333; }
+
+/* =========================================
+   CONFIGURAÇÕES EXCLUSIVAS PARA IMPRESSORA 
+   ========================================= */
+@media print {
+    /* Esconde o menu lateral, a barra do topo e todos os botões */
+    .sidebar, .topbar, .btn {
+        display: none !important;
+    }
+
+    /* Tira a margem esquerda para a guia centralizar e ocupar a folha toda */
+    .main-content {
+        margin-left: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* Força o fundo a ficar branco para economizar tinta */
+    body {
+        background-color: #fff !important;
+    }
+    
+    /* Tira sombras e bordas dos cards para uma impressão mais limpa */
+    .card-custom {
+        box-shadow: none !important;
+        border: 1px solid #ddd !important;
+    }
+}
